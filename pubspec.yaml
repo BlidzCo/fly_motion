@@ -1,0 +1,22 @@
+name: fly_motion
+description: "A Flutter package for animating widgets from one position to another with a smooth, curved motion."
+version: 1.0.0
+homepage: https://github.com/flogiroud/fly_motion
+topics:
+  - animation
+
+environment:
+  sdk: ^3.5.4
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  overlay_support: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
