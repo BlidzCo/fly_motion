@@ -1,16 +1,3 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
 # FlyMotion
 
 A Flutter package that creates smooth, natural flying animations between widgets or screen coordinates.
@@ -18,16 +5,15 @@ A Flutter package that creates smooth, natural flying animations between widgets
 [![pub package](https://img.shields.io/pub/v/fly_motion.svg)](https://pub.dev/packages/fly_motion)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![FlyMotion Preview](https://github.com/user-attachments/assets/f8652641-f70e-4717-9ed1-eafc2e27e5bd)
+
 ## Features
 
 - Create fluid animations that "fly" widgets from one position to another
 - Animate using widget keys or specific screen coordinates
 - Customize animation duration, path curvature, and timing
 - Animate multiple items with configurable delays
-- Control size transitions at animation endpoints
 - Simple API with minimal setup required
-
-![FlyMotion Demo](https://raw.githubusercontent.com/yourusername/fly_motion/main/example/assets/demo.gif)
 
 ## Getting Started
 
@@ -44,7 +30,7 @@ Import the package:
 import 'package:fly_motion/fly_motion.dart';
 ```
 
-Wrap your app with `FlyMotionOverlaySupport`:
+Wrap your app with `FlyMotionOverlaySupport` - required for animations to work properly as they use Flutter's overlay system:
 
 ```dart
 void main() {
@@ -59,6 +45,9 @@ void main() {
 ## Usage
 
 ### Animate between widgets using GlobalKeys
+Allows you to animate widgets from one location to another by referencing their GlobalKeys. Perfect for shopping cart animations, item selections, or any UI interaction where elements need to visually move between components.
+
+You can attach these Keys to any widgets in your widget tree - the package automatically retrieves their positions.
 
 ```dart
 // Define GlobalKeys for your widgets
@@ -89,6 +78,7 @@ FlyMotion.launchFromKeys(
 ```
 
 ### Animate between specific coordinates
+Offers more flexibility by allowing you to launch animations from any point on the screen to another without depending on existing widgets. Perfect for custom interactions, games, or when you need to animate elements based on touch events or arbitrary positions.
 
 ```dart
 FlyMotion.launch(
@@ -102,8 +92,8 @@ FlyMotion.launch(
       shape: BoxShape.circle,
     ),
   ),
-  controlRange: 150, // Controls the curve's arc height
-  keepSizeOnEnd: true, // Maintains size at animation end
+  controlRange: 150,
+  keepSizeOnEnd: true,
 );
 ```
 
@@ -118,8 +108,7 @@ FlyMotion.launch(
 | `keepSizeOnEnd`          | Whether to maintain item size at animation end            | false   |
 
 ## Example
-
-Check out the [example project](https://github.com/yourusername/fly_motion/tree/main/example) for a complete demonstration of FlyMotion's capabilities.
+Check out the [example project](https://github.com/flogiroud/fly_motion/tree/main/example) for a complete demonstration of FlyMotion's capabilities.
 
 ## Additional Information
 
